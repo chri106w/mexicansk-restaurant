@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="dk">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MäX - Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(Artboard%2025.svg);
+            background-repeat: repeat;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 13px;
+            margin: 0px;
+        }
+
+        #popup {
+            top: 0;
+            width: 100vw;
+            height: 100vw;
+            position: absolute;
+            background-color: hsla(0, 15%, 40%, 30%);
+            overflow: scroll;
+            display: none;
+            z-index: 2;
+        }
+
+        #luk {
+            position: fixed;
+            right: 1.5rem;
+            padding-top: 1vw;
+        }
+
+        #luk button {
+            border: none;
+            background-color: #403F3F;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        #indhold {
+            min-height: 50vh;
+            background-color: white;
+            width: 70vw;
+            margin: 4rem auto;
+        }
+
+        .menu {
+            padding: 10px;
+        }
+
+        .menu button {
+            padding: 13px;
+            border: none;
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #403F3F;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .style {
+            background-color: white;
+            text-align: center;
+            padding: 2vw;
+        }
+
+        #navn {
+            height: 7vw;
+            margin-top: 1vw;
+            margin-bottom: 0;
+        }
+
+        #indhold {
+            padding: 1vw;
+        }
+
+        p {
+            margin: 2vw;
+            size: 12px;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        h2 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 16px;
+        }
+
+        .img-container {
+            background-color: white;
+            height: 40vw;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            color: #403F3F;
+            text-decoration: none;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 15px;
+            padding: 30px;
+        }
+
+        .logo {
+            width: 50%;
+        }
+
+        img {
+            width: 100%;
+
+        }
+
+        header {
+            background-color: white;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #liste {
+            margin: 8px;
+        }
+
+        @media screen and (min-width: 760px) {
+            a {
+                padding: 80px;
+                font-size: 25px;
+            }
+
+            .menu {
+                position: fixed;
+                flex-basis: auto;
+                flex-grow: 2;
+                width: 50px;
+                padding-left: 500px;
+            }
+
+            .menu button {
+                font-size: 25px;
+                padding: 22px;
+            }
+
+            h3 {
+                font-size: 35px;
+                padding-left: 34px;
+                text-align: left;
+            }
+
+            h2 {
+                font-family: 'Roboto Mono', monospace;
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            #liste {
+                width: 450px;
+                position: relative;
+                padding-left: 20px;
+                flex-basis: auto;
+                flex-grow: 2;
+                cursor: pointer;
+            }
+
+            @media screen and (min-width: 1000px) {
+                a {
+                    padding: 100px;
+                    font-size: 32px;
+                }
+
+                p {
+                    font-size: 18px;
+                    width: 650px;
+                }
+            }
+
+            @media screen and (min-width: 1300px) {
+                .menu {
+                    width: 750px;
+                    position: absolute;
+                    z-index: 2;
+                    top: 433px;
+                    left: 75px;
+                }
+
+
+                a {
+                    padding: 160px;
+                    font-size: 30px;
+                }
+
+                #liste {
+                    width: 800px;
+                }
+
+                .img-container {
+                    height: 30vw;
+                }
+
+                h2 {
+                    font-family: 'Roboto Mono', monospace;
+                    font-size: 25px;
+                }
+
+                #popup h2 {
+                    padding-left: 25px;
+                }
+
+                p {
+                    font-size: 18px;
+                    width: 650px;
+                }
+
+                .menu button {
+                    font-size: 20px;
+                    padding: 13px;
+                    position: relative;
+                }
+
+                .logo {
+                    width: 35%;
+                }
+
+                #popup img {
+                    width: 70%;
+                    padding-left: 110px;
+                }
+
+                #indhold {
+                    width: 800px;
+                }
+
+                #indhold p {
+                    width: 700px;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="popup">
+        <div id="luk">
+            <button>X</button>
+        </div>
+        <div id="indhold"></div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="logo.svg" alt="maxlogo">
+        </div>
+        <nav>
+            <a href="index.html">ABOUT</a>
+            <a href="menu.html">MENU</a>
+            <a href="kontakt.html">CONTACT</a>
+        </nav>
+    </header>
+    <h3>All</h3>
+
+    <nav class="menu">
+        <button class="filter" data-kategori="alle">All</button>
+        <button class="filter valgt" data-kategori="forretter">Sides</button>
+        <button class="filter" data-kategori="drikke">Drinks</button>
+        <button class="filter" data-kategori="burritos">Burritos</button>
+        <button class="filter" data-kategori="quesadillas">Quesadillas</button>
+        <button class="filter" data-kategori="tacos">Tacos</button>
+    </nav>
+
+    <div id="liste">
+    </div>
+    <script>
+        let alleRetter = [];
+        let filter = "alle";
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            hentJson();
+            async function hentJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1oE7Byx6pN5r5ABDqU22wBGux-jCL5aicYAYw-G_TwwA");
+                alleRetter = await jsonData.json();
+                visRet();
+            }
+
+            function visRet() {
+                let destination = document.querySelector("#liste");
+                destination.innerHTML = "";
+                alleRetter.forEach(ret => {
+                    if (filter == "alle" || filter == ret.kategori) {
+                        let template = `
+                        <div class="style">
+                         <div class="img-container">
+                            <img src = imgs/${ret.billede}.jpg>
+                            </div>
+                          <h2 id="navn">${ret.navn}</h2>
+                            <p>Pris: ${ret.pris}</p>
+                            <p>${ret.kort}</p>
+                        </div>`;
+                        destination.insertAdjacentHTML("beforeend", template);
+                        destination.lastElementChild.addEventListener("click", visSingle);
+
+                        function visSingle() {
+                            document.querySelector("#indhold").innerHTML = `
+                             <article class="ret">
+                             <img class="billede" src="imgs/${ret.billede}.jpg" alt="${ret.navn}">
+                            <h2>${ret.navn}</h2>
+                            <p>${ret.pris}</p>
+                             <p>${ret.lang}</p>
+                             </article>
+                           `;
+                            document.querySelector("#popup").style.display = "block";
+                            document.querySelector("#popup #luk").addEventListener("click", close);
+                        }
+
+
+                    }
+                })
+            }
+            document.querySelectorAll(".filter").forEach(but => {
+                but.addEventListener("click", filtrering);
+            });
+
+            function filtrering() {
+                document.querySelectorAll(".filter").forEach(but => {
+                    but.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+                document.querySelector("h3").textContent = this.textContent;
+                filter = this.getAttribute("data-kategori");
+                visRet();
+            }
+
+            function close() {
+                document.querySelector("#popup").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
